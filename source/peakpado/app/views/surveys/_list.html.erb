@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div id='top'>
+  <h1><a href='/'>Survey with AmazonDynamo</a></h1>
+</div>
+
+<br>
+
+<div id="listtitle">
+	<h3 id="list-h3">
+		<a href="#">Survey List 
+			<span><i>(click the survey to take a survey or see the result)</i></span>
+		</a>
+	</h3>
+</div>
+
+<table class="objlist">
+<% @surveys.each do |object| %>
+  <tr>
+    <td><%= link_to object.description, "/surveys/"+object.title, :class => "objclicked" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<script>
+  $(function() {
+    $( "#listtitle" ).accordion({
+        autoHeight: false,
+        icons: false,
+    });
+    $("#list-h3").addClass('ui-state-hover').removeClass('ui-state-active');
+  });
+</script>

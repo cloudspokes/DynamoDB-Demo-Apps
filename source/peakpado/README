@@ -1,0 +1,47 @@
+
+Simple Survey Application built on DynamoDB
+
+	submission for "Awesome Demo with Amazon DynamoDB"
+
+
+== Live Demo App
+	http://survey-dynamo.heroku.com/surveys/primary
+
+
+== Screencast of Demo App Action
+	http://screencast.com/t/ghpngHqk
+
+
+== How to Run Rails demo app
+  - configure AWS access_key_id and secret_access_key in config/aws.yml
+  $ bundle install
+  $ rails s
+
+
+== Dynamo Tables Design
+
+- User table: hash key is name(string type)
+   This table has all users data. Currently there is only one attribute 'sex', but any attribute
+   can be added for customized survey
+
+- Survey table: hash key is title(string type)
+   The Survey table has information about all surveys
+
+- Result: hash key is surveytitle (string type), range key is username(string type)
+   This table has the actual replies from users. One good thing of hask/range key table is it can
+   query all data for a particular survey only with hask_key. So I set survey title to hash key,
+   user name to range key.
+
+
+== Ruby Model Class
+
+  I created a model class for each table, and made the API similar to ActiveRecord.
+  Here are some examples.
+
+  - User.all
+  - User.find('john')
+  - user = User.new(:name => 'Tibo', :sex => 'male')
+  - user.save
+  - Result.query(:hash_value => 'primary')
+
+Thank you very much

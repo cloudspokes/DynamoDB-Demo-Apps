@@ -1,0 +1,5 @@
+<% tweets.each do |tweet| %>
+  <article class='tweet'>
+    <b><%= tweet.user %>:</b> <span class='text'><%= tweet.text %></span>
+  </article>
+<% end %>

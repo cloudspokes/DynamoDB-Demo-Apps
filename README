@@ -1,0 +1,13 @@
+Build an #Awesome Demo with Amazon DynamoDB
+
+URL: http://www.cloudspokes.com/challenges/1362
+Challenge end date: January 27, 2012
+Blog Post: http://blog.cloudspokes.com/2012/01/demo-how-to-get-started-with-dynamodb.html
+
+Description
+===========
+Amazon DynamoDB was announced yesterday with much fanfare. We released a blog post and demo application to get people started but want to see what type of applications you can come up with.
+
+Requirements
+============
+This challenge is all about creating a cool application using Amazon DynamoDB. It can be command line, mobile or running on some PaaS platform. Use any technology you'd like. The "coolest" application wins so get creative. Anything goes!

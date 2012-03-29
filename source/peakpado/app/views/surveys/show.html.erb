@@ -1,0 +1,90 @@
+
+<p id="notice"><%= notice %></p>
+
+<%= render 'list' %>
+
+<br>
+
+<div id="accordion">
+	<h3><a href="#">Take a Survey</a></h3>
+	<div>
+		<h4><%= @survey.description %>
+		<br>
+		<% action_url = "/surveys/"+@survey.title %>
+		<form id='search' action=<%= action_url %> method='get'>
+			<div id="question">
+				<input type="radio" id="question1" class="sclick" name="question" value="q1"/>
+				<label for="question1"><%= @survey.q1 %></label>
+				<input type="radio" id="question2" class="sclick" name="question" value="q2"/>
+				<label for="question2"><%= @survey.q2 %></label>
+				<input type="radio" id="question3" class="sclick" name="question" value="q3"/>
+				<label for="question3"><%= @survey.q3 %></label>
+				<input type="radio" id="question4" class="sclick" name="question" value="q4"/>
+				<label for="question4"><%= @survey.q4 %></label>
+				<input type="radio" id="question5" class="sclick" name="question" value="q5"/>
+				<label for="question5"><%= @survey.q5 %></label>
+			</div>
+			<br><br>
+			Your name <input id="username" name='username' value=''/>
+			<br>
+			<button id="submit" type='submit'>Submit</button>
+		</form>
+	</div>
+
+	<h3><a href="#">Survey Result</a></h3>
+	<div>
+		<table id="chart">
+			<caption><%= @survey.caption %></caption>
+			<thead>
+				<tr>
+					<td></td>
+					<th scope="col"><%= @survey.q1 %></th>
+					<th scope="col"><%= @survey.q2 %></th>
+					<th scope="col"><%= @survey.q3 %></th>
+					<th scope="col"><%= @survey.q4 %></th>
+					<th scope="col"><%= @survey.q5 %></th>
+				</tr>
+			<thead>
+			<tbody>
+				<tr>
+					<th scoope="row"><%= @survey.title %></th>
+					<th scope="col"><%= @tally[:q1] %>%</th>
+					<th scope="col"><%= @tally[:q2] %>%</th>
+					<th scope="col"><%= @tally[:q3] %>%</th>
+					<th scope="col"><%= @tally[:q4] %>%</th>
+					<th scope="col"><%= @tally[:q5] %>%</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<h3><a href="#"><i>Thank you</i></a></h3>
+	<div>
+		<p>Thank you very much for watching this demo!</p>
+	</div>
+</div>
+
+<script>
+	// onclick, animate it hide/show
+	var hide_show = function() {
+		// console.log(this.href);
+    	$("#accordion").slideUp('2500');
+	}
+
+	$(function() {
+		$( "#accordion" ).accordion({
+			autoHeight: false,
+			icons: false,
+			animated: 'bounceslide'
+		});
+		
+		$(".objclicked").live( 'click', function() {
+			setTimeout(hide_show, 100);
+			return true;
+		});
+	});
+
+
+	
+</script>
+

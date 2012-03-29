@@ -1,0 +1,77 @@
+// Place all the styles related to the scores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+#content {
+  width: 780px;
+  margin: 0 auto;
+}
+
+#top h1 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: normal;
+  border-bottom: 1px solid #c77;
+}
+
+#top a {
+  color: #000;
+  text-decoration: none;
+}
+
+table.opplist td {
+  padding: 1px 10px;
+  vertical-align: middle;
+  //border-bottom: 1px solid #ccc;
+  //font-size: 15px;
+}
+
+table.opportunities { 
+  width: 100%; 
+  border-collapse: collapse; 
+  //border: 1px solid #ccc; 
+  border-bottom: 0; 
+}
+
+table.opportunities td {
+  padding: 0 10px;
+  vertical-align: middle;
+  //border-bottom: 1px solid #ccc;
+  color: #ddd;
+  //font-size: 15px;
+}
+
+table.opportunities th {
+  vertical-align: middle;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  //border-right: 1px solid #ddd;
+  //background: #eee;
+  padding: 2px 10px
+}
+
+table.opportunities td a {
+  color: #39c;
+  font-size: 12px;
+  text-decoration: none
+}
+
+#bottom {
+  text-align: center;
+  padding: 70px 0 20px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+#bottom a {
+  color: #999;
+}
+
+#content h3 span { font-size: 15px;  padding: 0 10px; }
+
+
+

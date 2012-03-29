@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/styles.css'/>
+    <title>Posterity</title>
+  </head>
+  <body>
+    <header>
+      <h1>Posterity, a DynamoDB Demo by Michael Bleigh</h1>
+    </header>
+    <aside id='sidebar'>
+      <%= erb :sidebar %>
+    </aside>
+    <section id='main'>
+      <% if session[:user] %>
+        <h1>Welcome, <%= session[:user] %></h1>
+        <%= yield %>
+      <% else %>
+        <h1>Welcome! This is the global timeline.</h1>
+        <%= erb :timeline, locals: {tweets: Tweet.timeline('global')} %>
+      <% end %>
+    </section>
+  </body>
+</html>
